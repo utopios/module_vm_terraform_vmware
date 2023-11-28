@@ -1,13 +1,4 @@
-# module_vm_terraform_vmware
-
----
-
-- Ce module permet de créer une machine virtuelle à partir d'un template linux.
-
-#### Arguments
-
-```tf
-ariable "vsphere_datacenter_id" {
+variable "vsphere_datacenter_id" {
   type = number
 }
 
@@ -42,19 +33,4 @@ variable "vsphere_custom_information" {
       extra_config = map(string)
     })
 }
-```
 
-#### Sorties
-
-```tf
-output "ip_addresses" {
-  description = "List vm Ip addresses"
-  value = vsphere_virtual_machine.vm.guest_ip_addresses
-}
-
-output "power_state" {
-  description = "power state"
-  value = vsphere_virtual_machine.vm.power_state
-}
-
-```
